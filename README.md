@@ -107,7 +107,7 @@ pip install -r requirements.txt
 ```
 
 ### 3. Download the trained model
-Download `best_model.keras` from [Google Drive](YOUR_DRIVE_LINK_HERE) and place it inside the `model/` folder.
+Download `best_model.keras` from [Google Drive](https://drive.google.com/file/d/1lay9BFkyMMLa8nTZWEBihJBaTwDhUJBB/view?usp=sharing) and place it inside the `model/` folder.
 
 ### 4. Start the backend
 ```bash
@@ -177,6 +177,15 @@ Health check — returns `{ "message": "WasteIQ API is running" }`
 
 ---
 
+## Dataset
+
+- Source: [Garbage Classification — Kaggle](https://www.kaggle.com/datasets/mostafaabla/garbage-classification)
+- Original classes: 12
+- Merged into: 8 final classes
+- Total images after cleaning: 9,713
+
+---
+
 ## Future Enhancements
 
 - Grad-CAM heatmap visualisation for model explainability
@@ -190,11 +199,9 @@ Health check — returns `{ "message": "WasteIQ API is running" }`
 
 ## Author
 
-- **Name:** [Your Full Name]
-- **Institution:** [Your College Name]
-- **Department:** [Your Department]
-- **Project:** Final Year Project — 2024-25
-- **GitHub:** [@manpreet71](https://github.com/manpreet71)
+- **Name:** Manpreet Singh
+- **Institution:** Khalsa College Amritsar
+- **Project:** Final Year Project — 2026
 
 ---
 
