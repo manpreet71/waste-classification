@@ -8,6 +8,10 @@ A deep learning based waste classification system that identifies waste from ima
 
 Upload a waste image → Get instant classification → View disposal suggestion
 
+<img width="1919" height="966" alt="Screenshot 2026-03-29 182345" src="https://github.com/user-attachments/assets/6de54ca4-f0f0-4762-af54-6cb492aaa78d" />
+<img width="1919" height="964" alt="Screenshot 2026-03-29 182407" src="https://github.com/user-attachments/assets/8ed74654-1246-4eea-b516-f8e7413dbdb8" />
+
+
 ---
 
 ## Features
