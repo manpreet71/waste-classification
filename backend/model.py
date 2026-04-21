@@ -15,26 +15,29 @@ print("Model loaded successfully.")
 
 
 def predict(image_bytes: bytes) -> dict:
-    # ── Load and preprocess image ──
+
+    # ── Preprocess image ──
     img       = Image.open(BytesIO(image_bytes)).convert("RGB")
     img       = img.resize(IMG_SIZE)
     img_array = np.array(img)
     img_array = np.expand_dims(img_array, axis=0)
 
-    # ── Predict ──
+    # ── Run model ──
     predictions = model.predict(img_array, verbose=0)
-    confidence  = float(np.max(predictions)) * 100
+    confidence  = float(np.max(predictions))
     class_index = int(np.argmax(predictions))
     waste_type  = CLASS_NAMES[class_index]
 
+    print(f"Predicted: {waste_type} ({confidence*100:.2f}%)")
+
     # ── Get metadata ──
-    meta = METADATA[waste_type]
+    meta = METADATA.get(waste_type, METADATA["general"])
 
     return {
         "waste_type"    : waste_type,
         "biodegradable" : meta["biodegradable"],
-        "confidence"    : round(confidence, 2),
+        "confidence"    : round(confidence * 100, 2),
         "reusable"      : meta["reusable"],
         "recyclable"    : meta["recyclable"],
-        "disposal"      : meta["disposal"]
+        "disposal"      : meta["disposal"],
     }

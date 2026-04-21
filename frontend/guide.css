@@ -1,0 +1,129 @@
+body {
+    display: block;
+    padding: 0;
+    background: #f0f7ee;
+    background-image:
+        radial-gradient(ellipse at 10% 10%, rgba(126,200,67,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 90%, rgba(56,189,158,0.1) 0%, transparent 50%);
+}
+
+.guide-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+}
+
+.guide-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.guide-header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1a2e1a;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+}
+
+.guide-header h1 span { color: #4e9a1a; }
+
+.guide-header p {
+    font-size: 15px;
+    color: #7a9070;
+}
+
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.guide-card {
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(180,220,160,0.4);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.guide-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(80,140,60,0.12);
+}
+
+.guide-card-top {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.guide-icon { font-size: 36px; }
+
+.guide-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.guide-bin {
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.guide-card-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.guide-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.gtag {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+}
+
+.gtag-yes { background: #EAF3DE; color: #27500A; }
+.gtag-no  { background: #FCEBEB; color: #791F1F; }
+
+.guide-examples { background: #f7fbf4; border-radius: 8px; padding: 8px 12px; }
+
+.ex-title {
+    font-size: 10px;
+    font-weight: 600;
+    color: #9ab090;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.ex-list {
+    font-size: 12px;
+    color: #3a5a2a;
+    line-height: 1.5;
+}
+
+.guide-tip {
+    font-size: 12px;
+    color: #5a7a4a;
+    line-height: 1.7;
+    border-left: 3px solid #4e9a1a;
+    padding-left: 10px;
+}

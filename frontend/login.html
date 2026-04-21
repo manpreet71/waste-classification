@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WasteIQ — Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">♻ Waste<span>IQ</span></a>
+            <ul class="nav-links">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="index.html" class="nav-link">Classify</a></li>
+                <li><a href="guide.html" class="nav-link">Waste Guide</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="login.html" class="nav-link active">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="login-wrap">
+
+        <div class="login-header">
+            <h1>Welcome to <span>WasteIQ</span></h1>
+            <p>Choose your login type to continue</p>
+        </div>
+
+        <div class="login-cards-row">
+
+            <!-- User Login -->
+            <div class="login-card">
+                <div class="login-icon">👤</div>
+                <h2>User Login</h2>
+                <p>Login to classify waste and view recycling suggestions</p>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="Enter your email" />
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password" />
+                </div>
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" /> Remember me
+                    </label>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+                <button class="login-btn" onclick="handleLogin('user')">Login as User</button>
+                <div class="form-footer">
+                    Don't have an account? <a href="#">Sign up</a>
+                </div>
+            </div>
+
+            <!-- Admin Login -->
+            <div class="login-card">
+                <div class="login-icon">🔐</div>
+                <h2>Admin Login</h2>
+                <p>Admin access for managing waste classes and system settings</p>
+                <div class="form-group">
+                    <label>Admin Username</label>
+                    <input type="text" placeholder="Enter admin username" />
+                </div>
+                <div class="form-group">
+                    <label>Admin Password</label>
+                    <input type="password" placeholder="Enter admin password" />
+                </div>
+                <div class="form-group">
+                    <label>Access Key</label>
+                    <input type="password" placeholder="Enter secret access key" />
+                </div>
+                <button class="login-btn admin" onclick="handleLogin('admin')">Login as Admin</button>
+                <div class="form-footer">
+                    Admin access is restricted to authorized personnel only.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>WasteIQ &copy; 2025 &nbsp;|&nbsp; Trained on 9,700+ images &nbsp;|&nbsp; 8 categories &nbsp;|&nbsp; 96.52% accuracy</p>
+    </footer>
+
+    <script src="login.js"></script>
+</body>
+</html>

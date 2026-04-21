@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WasteIQ — Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">♻ Waste<span>IQ</span></a>
+            <ul class="nav-links">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="index.html" class="nav-link">Classify</a></li>
+                <li><a href="guide.html" class="nav-link">Waste Guide</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="#" class="nav-link logout-btn" onclick="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="admin-wrap">
+
+        <!-- Header -->
+        <div class="admin-header">
+            <div>
+                <h1>Admin <span>Panel</span></h1>
+                <p>Manage waste classes and system configuration</p>
+            </div>
+            <div class="admin-badge">Admin Access</div>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="admin-stats">
+            <div class="admin-stat">
+                <div class="as-num">8</div>
+                <div class="as-lbl">Current Classes</div>
+            </div>
+            <div class="admin-stat">
+                <div class="as-num">9,713</div>
+                <div class="as-lbl">Training Images</div>
+            </div>
+            <div class="admin-stat">
+                <div class="as-num">96.52%</div>
+                <div class="as-lbl">Model Accuracy</div>
+            </div>
+            <div class="admin-stat">
+                <div class="as-num">EfficientNetB0</div>
+                <div class="as-lbl">Architecture</div>
+            </div>
+        </div>
+
+        <!-- Current Classes Table -->
+        <div class="admin-section">
+            <div class="section-head">
+                <h2>Current Waste Classes</h2>
+                <span class="section-badge">8 classes active</span>
+            </div>
+            <div class="classes-table">
+                <div class="ct-row ct-header">
+                    <span>Class Name</span>
+                    <span>Biodegradable</span>
+                    <span>Reusable</span>
+                    <span>Recyclable</span>
+                    <span>Status</span>
+                </div>
+                <div class="ct-row">
+                    <span class="cls-name">🫙 Glass</span>
+                    <span class="tag-no">No</span>
+                    <span class="tag-yes">Yes</span>
+                    <span class="tag-yes">Yes</span>
+                    <span class="status-active">Active</span>
+                </div>
+                <div class="ct-row">
+                    <span class="cls-name">📄 Paper</span>
+                    <span class="tag-yes">Yes</span>
+                    <span class="tag-yes">Yes</span>
+                    <span class="tag-yes">Yes</span>
+                    <span class="status-active">Active</span>
+                </div>
+                <div class="ct-row">
+                    <span class="cls-name">🔩 Metal</span>
+                    <span class="tag-no">No</span>
+                    <span class="tag-yes">Yes</span>
+                    <span class="tag-yes">Yes</span>
+                    <span class="status-active">Active</span>
+                </div>
+                <div class="ct-row">
+                    <span class="cls-name">⚠️ Hazardous</span>
+                    <span class="tag-no">No</span>
+                    <span class="tag-no">No</span>
+                    <span class="tag-yes">Yes</span>
+                    <span class="status-active">Active</span>
+                </div>
+                <div class="ct-row">
+                    <span class="cls-name">🌿 Organic</span>
+                    <span class="tag-yes">Yes</span>
+                    <span class="tag-no">No</span>
+                    <span class="tag-no">No</span>
+                    <span class="status-active">Active</span>
+                </div>
+                <div class="ct-row">
+                    <span class="cls-name">🧴 Plastic</span>
+                    <span class="tag-no">No</span>
+                    <span class="tag-yes">Yes</span>
+                    <span class="tag-yes">Yes</span>
+                    <span class="status-active">Active</span>
+                </div>
+                <div class="ct-row">
+                    <span class="cls-name">👕 Textile</span>
+                    <span class="tag-no">No</span>
+                    <span class="tag-yes">Yes</span>
+                    <span class="tag-no">No</span>
+                    <span class="status-active">Active</span>
+                </div>
+                <div class="ct-row">
+                    <span class="cls-name">🗑️ General</span>
+                    <span class="tag-no">No</span>
+                    <span class="tag-no">No</span>
+                    <span class="tag-no">No</span>
+                    <span class="status-active">Active</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add New Class Form -->
+        <div class="admin-section">
+            <div class="section-head">
+                <h2>Add New Waste Class</h2>
+                <span class="section-badge future">Future Enhancement</span>
+            </div>
+            <p class="future-note">This form is designed for future model retraining. Adding a new class will require uploading training images and retraining the EfficientNetB0 model.</p>
+
+            <div class="add-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Class Name</label>
+                        <input type="text" placeholder="e.g. E-Waste" />
+                    </div>
+                    <div class="form-group">
+                        <label>Bin Colour</label>
+                        <input type="text" placeholder="e.g. Red Bin" />
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Biodegradable</label>
+                        <select>
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Reusable</label>
+                        <select>
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Recyclable</label>
+                        <select>
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Disposal Suggestion</label>
+                    <textarea rows="3" placeholder="Enter detailed disposal and recycling guidance for this waste class..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Example Items</label>
+                    <input type="text" placeholder="e.g. Phones, Laptops, Chargers, Cables" />
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Training Images</label>
+                    <div class="img-upload-area">
+                        <div class="upload-icon">📁</div>
+                        <p>Drag & drop training images here</p>
+                        <span>Minimum 500 images recommended for accurate classification</span>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn-reset" onclick="resetForm()">Reset Form</button>
+                    <button class="btn-submit" onclick="submitForm()">Submit for Review</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Retrain Section -->
+        <div class="admin-section retrain-section">
+            <div class="section-head">
+                <h2>Model Retraining</h2>
+                <span class="section-badge future">Future Enhancement</span>
+            </div>
+            <p class="future-note">Once a new class is approved, the model can be retrained using Google Colab. The retrained model will replace the current one automatically after validation.</p>
+            <div class="retrain-steps">
+                <div class="rs-step">
+                    <div class="rs-num">1</div>
+                    <div class="rs-text">New class submitted and approved by admin</div>
+                </div>
+                <div class="rs-step">
+                    <div class="rs-num">2</div>
+                    <div class="rs-text">Training images validated and added to dataset</div>
+                </div>
+                <div class="rs-step">
+                    <div class="rs-num">3</div>
+                    <div class="rs-text">EfficientNetB0 retrained with new class on Google Colab</div>
+                </div>
+                <div class="rs-step">
+                    <div class="rs-num">4</div>
+                    <div class="rs-text">New model validated — accuracy must exceed 90%</div>
+                </div>
+                <div class="rs-step">
+                    <div class="rs-num">5</div>
+                    <div class="rs-text">Model deployed to FastAPI backend automatically</div>
+                </div>
+            </div>
+            <button class="btn-retrain" disabled>Initiate Retraining — Coming Soon</button>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <p>WasteIQ &copy; 2025 &nbsp;|&nbsp; Admin Panel &nbsp;|&nbsp; For authorized personnel only</p>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>

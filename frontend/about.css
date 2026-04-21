@@ -1,0 +1,235 @@
+body {
+    display: block;
+    padding: 0;
+    background: #f0f7ee;
+    background-image:
+        radial-gradient(ellipse at 10% 10%, rgba(126,200,67,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 90%, rgba(56,189,158,0.1) 0%, transparent 50%);
+}
+
+.about-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.about-hero {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.about-hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1a2e1a;
+    letter-spacing: -1px;
+    margin-bottom: 0.75rem;
+}
+
+.about-hero h1 span { color: #4e9a1a; }
+
+.about-hero p {
+    font-size: 15px;
+    color: #5a7a4a;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-section {
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(180,220,160,0.4);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(12px);
+}
+
+.about-section h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a2e1a;
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    font-size: 14px;
+    color: #3a5a2a;
+    line-height: 1.8;
+    margin-bottom: 0.75rem;
+}
+
+/* Model steps */
+.model-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.model-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #f7fbf4;
+    border-radius: 12px;
+    padding: 12px 14px;
+}
+
+.ms-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #4e9a1a;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ms-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a2e1a;
+    margin-bottom: 3px;
+}
+
+.ms-desc {
+    font-size: 12px;
+    color: #5a7a4a;
+    line-height: 1.6;
+}
+
+/* Stats */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.stat-box {
+    background: #f7fbf4;
+    border: 1px solid rgba(180,220,160,0.5);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.stat-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #2d5a1b;
+    margin-bottom: 4px;
+}
+
+.stat-lbl {
+    font-size: 11px;
+    color: #7a9070;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Tech stack */
+.tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.tech-card {
+    background: #f7fbf4;
+    border-radius: 12px;
+    padding: 14px;
+}
+
+.tech-layer {
+    font-size: 11px;
+    font-weight: 700;
+    color: #4e9a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+}
+
+.tech-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tech-chip {
+    font-size: 12px;
+    padding: 4px 10px;
+    background: white;
+    border: 1px solid rgba(180,220,160,0.5);
+    border-radius: 20px;
+    color: #3a5a2a;
+    font-weight: 500;
+}
+
+/* Dataset table */
+.dataset-table {
+    margin-top: 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(180,220,160,0.4);
+}
+
+.dt-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    padding: 10px 14px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(180,220,160,0.2);
+    color: #3a5a2a;
+}
+
+.dt-row:last-child { border-bottom: none; }
+
+.dt-header {
+    background: #4e9a1a;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dt-total {
+    background: #f0fbe8;
+    font-weight: 700;
+    color: #2d5a1b;
+}
+
+.dt-row:not(.dt-header):not(.dt-total):nth-child(even) {
+    background: #f7fbf4;
+}
+
+/* GitHub */
+.github-section { text-align: center; }
+
+.github-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 12px 28px;
+    background: #1a2e1a;
+    color: white;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.github-btn:hover {
+    background: #2d5a1b;
+    transform: translateY(-2px);
+}

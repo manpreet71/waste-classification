@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WasteIQ — About</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">♻ Waste<span>IQ</span></a>
+            <ul class="nav-links">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="index.html" class="nav-link">Classify</a></li>
+                <li><a href="guide.html" class="nav-link">Waste Guide</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="login.html" class="nav-link">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="about-wrap">
+
+        <!-- Hero -->
+        <div class="about-hero">
+            <h1>About <span>WasteIQ</span></h1>
+            <p>An AI-powered waste classification system built as a Final Year Project to promote smarter, more sustainable waste disposal practices.</p>
+        </div>
+
+        <!-- Project Description -->
+        <div class="about-section">
+            <h2>Project Overview</h2>
+            <p>WasteIQ is an end-to-end deep learning system that classifies waste images into 8 categories and provides detailed recycling and disposal suggestions. The system was built to address a real-world problem — most people do not know how to correctly classify and dispose of their waste, leading to contamination of recycling streams and unnecessary landfill waste.</p>
+            <p>The project combines a custom-trained EfficientNetB0 model, a FastAPI backend, and a responsive web frontend to deliver a complete, deployable waste management assistant.</p>
+        </div>
+
+        <!-- How it works -->
+        <div class="about-section">
+            <h2>How the Model Works</h2>
+            <div class="model-steps">
+                <div class="model-step">
+                    <div class="ms-num">1</div>
+                    <div class="ms-content">
+                        <div class="ms-title">Image Input</div>
+                        <div class="ms-desc">User uploads a waste image via the web interface. The image is sent to the FastAPI backend as a multipart form upload.</div>
+                    </div>
+                </div>
+                <div class="model-step">
+                    <div class="ms-num">2</div>
+                    <div class="ms-content">
+                        <div class="ms-title">Preprocessing</div>
+                        <div class="ms-desc">The image is resized to 224×224 pixels and converted to a NumPy array. EfficientNetB0's built-in preprocessing normalises pixel values.</div>
+                    </div>
+                </div>
+                <div class="model-step">
+                    <div class="ms-num">3</div>
+                    <div class="ms-content">
+                        <div class="ms-title">Model Inference</div>
+                        <div class="ms-desc">The preprocessed image is passed through EfficientNetB0. The model outputs a probability distribution across 8 waste classes. The class with the highest probability is selected.</div>
+                    </div>
+                </div>
+                <div class="model-step">
+                    <div class="ms-num">4</div>
+                    <div class="ms-content">
+                        <div class="ms-title">Metadata Lookup</div>
+                        <div class="ms-desc">The predicted class is used to fetch metadata — biodegradable status, reusability, recyclability, and a detailed disposal suggestion.</div>
+                    </div>
+                </div>
+                <div class="model-step">
+                    <div class="ms-num">5</div>
+                    <div class="ms-content">
+                        <div class="ms-title">Result Display</div>
+                        <div class="ms-desc">The result is returned as JSON and rendered on the classify page with a confidence bar, color-coded badges, and disposal guidance.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Model Stats -->
+        <div class="about-section">
+            <h2>Model Performance</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-val">96.52%</div>
+                    <div class="stat-lbl">Test Accuracy</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-val">9,713</div>
+                    <div class="stat-lbl">Training Images</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-val">8</div>
+                    <div class="stat-lbl">Waste Classes</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-val">16.73 MB</div>
+                    <div class="stat-lbl">Model Size</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-val">EfficientNetB0</div>
+                    <div class="stat-lbl">Architecture</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-val">ImageNet</div>
+                    <div class="stat-lbl">Pretrained On</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="about-section">
+            <h2>Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-layer">Model</div>
+                    <div class="tech-items">
+                        <span class="tech-chip">TensorFlow 2.21</span>
+                        <span class="tech-chip">Keras</span>
+                        <span class="tech-chip">EfficientNetB0</span>
+                        <span class="tech-chip">Google Colab</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-layer">Backend</div>
+                    <div class="tech-items">
+                        <span class="tech-chip">FastAPI</span>
+                        <span class="tech-chip">Uvicorn</span>
+                        <span class="tech-chip">Python 3.12</span>
+                        <span class="tech-chip">Pillow</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-layer">Frontend</div>
+                    <div class="tech-items">
+                        <span class="tech-chip">HTML5</span>
+                        <span class="tech-chip">CSS3</span>
+                        <span class="tech-chip">JavaScript</span>
+                        <span class="tech-chip">Google Fonts</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-layer">Dataset</div>
+                    <div class="tech-items">
+                        <span class="tech-chip">Kaggle</span>
+                        <span class="tech-chip">9,713 images</span>
+                        <span class="tech-chip">8 classes</span>
+                        <span class="tech-chip">70/15/15 split</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dataset -->
+        <div class="about-section">
+            <h2>Dataset</h2>
+            <p>The model was trained on the Garbage Classification dataset from Kaggle, originally containing 12 waste classes. The classes were remapped and merged into 8 final categories. The textile class was capped at 1,500 images to prevent class imbalance. The final dataset was split into 70% training, 15% validation, and 15% test sets.</p>
+            <div class="dataset-table">
+                <div class="dt-row dt-header">
+                    <span>Class</span>
+                    <span>Images</span>
+                    <span>Merged From</span>
+                </div>
+                <div class="dt-row"><span>Glass</span><span>2,011</span><span>white-glass, brown-glass, green-glass</span></div>
+                <div class="dt-row"><span>Paper</span><span>1,941</span><span>paper, cardboard</span></div>
+                <div class="dt-row"><span>Textile</span><span>1,500</span><span>clothes, shoes (capped)</span></div>
+                <div class="dt-row"><span>Organic</span><span>985</span><span>biological</span></div>
+                <div class="dt-row"><span>Hazardous</span><span>945</span><span>battery</span></div>
+                <div class="dt-row"><span>Plastic</span><span>865</span><span>plastic</span></div>
+                <div class="dt-row"><span>Metal</span><span>769</span><span>metal</span></div>
+                <div class="dt-row"><span>General</span><span>697</span><span>trash</span></div>
+                <div class="dt-row dt-total"><span>Total</span><span>9,713</span><span>—</span></div>
+            </div>
+        </div>
+
+        <!-- GitHub -->
+        <div class="about-section github-section">
+            <h2>Source Code</h2>
+            <p>The complete source code for this project is available on GitHub.</p>
+            <a href="https://github.com/manpreet71/waste-classification" target="_blank" class="github-btn">View on GitHub</a>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <p>WasteIQ &copy; 2025 &nbsp;|&nbsp; Trained on 9,700+ images &nbsp;|&nbsp; 8 categories &nbsp;|&nbsp; 96.52% accuracy</p>
+    </footer>
+
+</body>
+</html>

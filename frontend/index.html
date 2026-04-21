@@ -3,77 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WasteIQ — AI Waste Classification</title>
+    <title>WasteIQ — Classify</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
 
-    <div class="header">
-        <div class="ai-badge">AI POWERED</div>
-        <h1>Waste<span>IQ</span></h1>
-        <p>Upload a waste image — our model classifies it and tells you how to dispose it</p>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">♻ Waste<span>IQ</span></a>
+            <ul class="nav-links">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="index.html" class="nav-link active">Classify</a></li>
+                <li><a href="guide.html" class="nav-link">Waste Guide</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="login.html" class="nav-link">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="header">
+            <div class="ai-badge">AI POWERED</div>
+            <h1>Waste<span>IQ</span></h1>
+            <p>Upload a waste image — our model classifies it and tells you how to dispose it</p>
+        </div>
+
+        <div class="card">
+            <div class="upload-area" id="upload-area">
+                <input type="file" id="file-input" accept="image/*" hidden>
+                <div class="upload-content" id="upload-content">
+                    <div class="upload-icon">🌿</div>
+                    <p>Click to upload or drag & drop</p>
+                    <span>JPG, PNG, WEBP supported</span>
+                </div>
+                <img id="preview-img" src="" alt="preview" hidden>
+            </div>
+            <button class="predict-btn" id="predict-btn" disabled>
+                ✦ Classify Waste
+            </button>
+            <div class="scan-line" id="scan-line"></div>
+        </div>
+
+        <div class="result-card" id="result-card" hidden>
+            <div class="result-header">
+                <h2>Prediction Result</h2>
+                <span class="waste-type-badge" id="waste-type-badge">—</span>
+            </div>
+            <div class="result-grid">
+                <div class="result-item">
+                    <span class="label">Category</span>
+                    <span class="value" id="category">—</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Reusable</span>
+                    <span class="value" id="reusable">—</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Recyclable</span>
+                    <span class="value" id="recyclable">—</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Waste Type</span>
+                    <span class="value" id="waste-type">—</span>
+                </div>
+            </div>
+            <div class="confidence-wrap">
+                <div class="confidence-top">
+                    <span class="label">Confidence Score</span>
+                    <span class="value" id="confidence">—</span>
+                </div>
+                <div class="confidence-bar-bg">
+                    <div class="confidence-bar-fill" id="conf-bar"></div>
+                </div>
+            </div>
+            <div class="disposal-box">
+                <span class="label">♻ Disposal Suggestion</span>
+                <p id="disposal">—</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            Trained on 9,700+ images · 8 categories · 96.52% accuracy
+        </div>
+
     </div>
 
-    <div class="card">
-        <div class="upload-area" id="upload-area">
-            <input type="file" id="file-input" accept="image/*" hidden>
-            <div class="upload-content" id="upload-content">
-                <div class="upload-icon">🌿</div>
-                <p>Click to upload or drag & drop</p>
-                <span>JPG, PNG, WEBP supported</span>
-            </div>
-            <img id="preview-img" src="" alt="preview" hidden>
-        </div>
-        <button class="predict-btn" id="predict-btn" disabled>
-            ✦ Classify Waste
-        </button>
-        <div class="scan-line" id="scan-line"></div>
-    </div>
-
-    <div class="result-card" id="result-card" hidden>
-        <div class="result-header">
-            <h2>Prediction Result</h2>
-            <span class="waste-type-badge" id="waste-type-badge">—</span>
-        </div>
-        <div class="result-grid">
-            <div class="result-item">
-                <span class="label">Category</span>
-                <span class="value" id="category">—</span>
-            </div>
-            <div class="result-item">
-                <span class="label">Reusable</span>
-                <span class="value" id="reusable">—</span>
-            </div>
-            <div class="result-item">
-                <span class="label">Recyclable</span>
-                <span class="value" id="recyclable">—</span>
-            </div>
-            <div class="result-item">
-                <span class="label">Waste Type</span>
-                <span class="value" id="waste-type">—</span>
-            </div>
-        </div>
-        <div class="confidence-wrap">
-            <div class="confidence-top">
-                <span class="label">Confidence Score</span>
-                <span class="value" id="confidence">—</span>
-            </div>
-            <div class="confidence-bar-bg">
-                <div class="confidence-bar-fill" id="conf-bar"></div>
-            </div>
-        </div>
-        <div class="disposal-box">
-            <span class="label">♻ Disposal Suggestion</span>
-            <p id="disposal">—</p>
-        </div>
-    </div>
-
-    <div class="footer">
-        Trained on 9,700+ images · 8 categories · 96.52% accuracy
-    </div>
-
-</div>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
